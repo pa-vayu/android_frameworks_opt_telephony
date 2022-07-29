@@ -127,7 +127,8 @@ public class AccessNetworksManager extends Handler {
             ApnSetting.TYPE_CBS,
             ApnSetting.TYPE_SUPL,
             ApnSetting.TYPE_EMERGENCY,
-            ApnSetting.TYPE_XCAP
+            ApnSetting.TYPE_XCAP,
+            ApnSetting.TYPE_DUN
     };
 
     private final Phone mPhone;
