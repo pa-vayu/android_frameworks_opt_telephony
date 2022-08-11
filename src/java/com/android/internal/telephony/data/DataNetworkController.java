@@ -299,7 +299,7 @@ public class DataNetworkController extends Handler {
     private final @NonNull Set<DataNetworkControllerCallback> mDataNetworkControllerCallbacks =
             new ArraySet<>();
 
-    /** Indicates if packet switch data is restricted by the network. */
+    /** Indicates if packet switch data is restricted by the cellular network. */
     private boolean mPsRestricted = false;
 
     /** Indicates if NR advanced is allowed by PCO. */
@@ -1478,8 +1478,8 @@ public class DataNetworkController extends Handler {
             evaluation.addDataDisallowedReason(DataDisallowedReason.ROAMING_DISABLED);
         }
 
-        // Check if data is restricted by the network.
-        if (mPsRestricted) {
+        // Check if data is restricted by the cellular network.
+        if (mPsRestricted && transport == AccessNetworkConstants.TRANSPORT_TYPE_WWAN) {
             evaluation.addDataDisallowedReason(DataDisallowedReason.DATA_RESTRICTED_BY_NETWORK);
         }
 
