@@ -2400,6 +2400,9 @@ public class SimulatedCommands extends BaseCommands
     @Override
     public void setSignalStrengthReportingCriteria(List<SignalThresholdInfo> signalThresholdInfos,
             Message result) {
+        SimulatedCommandsVerifier.getInstance().setSignalStrengthReportingCriteria(
+                signalThresholdInfos, result);
+        resultSuccess(result, null);
     }
 
     @Override
